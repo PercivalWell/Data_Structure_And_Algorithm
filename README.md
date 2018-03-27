@@ -1,2 +1,6 @@
-Git is a distributed version control system.
-Git is free software distributed under the GPL.
+char hour=8;
+while(hour > 0)
+code();
+hour--;
+
+goHome();
