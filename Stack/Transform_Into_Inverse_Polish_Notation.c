@@ -39,11 +39,11 @@ int main()
                 s.list[s.top] = ch;
                 s.top++;
             }
-            else if ( JudgePriority(s.list[s.top], ch) ){
+            else if ( JudgePriority(s.list[s.top-1], ch) ){
                 s.list[s.top] = ch;
                 s.top++;
             }
-            else if ( !JudgePriority(s.list[s.top], ch) ){
+            else if ( !JudgePriority(s.list[s.top-1], ch) ){
                 while (s.top--){
                     list[i] = s.list[s.top];
                     i++;
