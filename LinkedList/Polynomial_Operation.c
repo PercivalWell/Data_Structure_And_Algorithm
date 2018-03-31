@@ -77,7 +77,7 @@ void PolynomialReverse(Polynomial *p){
 }
 
 double PolynomialWorkout(Polynomial *p){
-    if (p->next->exp > p->next->next->exp) //如果多项式按降序排列,则逆置;
+    if (p->next->exp > p->next->next->exp) //濡傛灉澶氶」寮忔寜闄嶅簭鎺掑垪,鍒欓�嗙疆;
         PolynomialReverse(p);
     Polynomial *t = p->next;
     int n = p->coe;
@@ -102,7 +102,7 @@ double PolynomialWorkout(Polynomial *p){
 }
 
 Polynomial *PolynomialSum(Polynomial *p1, Polynomial *p2){
-    if (p1->next->exp > p1->next->next->exp)                    //如果多项式按降序排列,则逆置;
+    if (p1->next->exp > p1->next->next->exp)                    //濡傛灉澶氶」寮忔寜闄嶅簭鎺掑垪,鍒欓�嗙疆;
         PolynomialReverse(p1);
     if (p2->next->exp > p2->next->next->exp)
         PolynomialReverse(p2);
@@ -141,19 +141,7 @@ Polynomial *PolynomialSum(Polynomial *p1, Polynomial *p2){
     return c;
 }
 
-void DeleteTheSameElement(Polynomial *p1, Polynomial *p2, Polynomial *p3){
-    if (p1->next->exp > p1->next->next->exp) //如果多项式按降序排列,则逆置;
-        PolynomialReverse(p1);
-    if (p2->next->exp > p2->next->next->exp)
-        PolynomialReverse(p2);
-    if (p3->next->exp > p3->next->next->exp)
-        PolynomialReverse(p3);
-    Polynomial *a = p1->next, *a1 = p1, *b = p2->next, *c = p3->next, *temp;
 
-
-
-
-}
 
 void DrawMenu(){
     printf("-------------------------MENU-------------------------\n");
@@ -162,8 +150,7 @@ void DrawMenu(){
     printf("| 3.Reverse the polynomial.                          |\n");
     printf("| 4.Workout the polynomial at a sercain value.       |\n");
     printf("| 5.Add the two polynomials.                         |\n");
-    printf("| 6.Delete the same element.                         |\n");
-    printf("| 7.Quit.                                            |\n");
+    printf("| 6.Quit.                                            |\n");
     printf("|----------------------------------------------------|\n");
 }
 
@@ -207,16 +194,6 @@ void Menu(){
                 PolynomialPutOut(temp53);
                 break;
             case 6:
-                printf("Select the polynomial you want delete some elements. The number begins at 0.\n");
-                scanf("%d", &l);
-                Polynomial *temp61 = Poly[l];
-                printf("Select the two polynomials where the elements are from. The number begins at 0.\n"); //Terrible Chglish.
-                scanf("%d%d", &m, &n);
-                Polynomial *temp62 = Poly[m], *temp63 = Poly[n];
-                DeleteTheSameElement(temp61, temp62, temp63);
-                PolynomialPutOut(temp61);
-                break;
-            case 7:
                 flag = 100;
                 break;
         }
