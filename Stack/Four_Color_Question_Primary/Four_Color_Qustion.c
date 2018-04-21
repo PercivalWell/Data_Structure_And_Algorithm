@@ -3,7 +3,6 @@
 typedef struct Stack{
 	int b[7];
 	int p;
-	int q;
 }Stack;
 
 int a[7][7] = {
@@ -44,7 +43,6 @@ int main(){
 	int i;
 	Stack map;
 	map.p = 0;
-	map.q = 0;
 	Push(&map, 1);
 	while ( !Is_Full(&map) ){
 		Push(&map, 1);
